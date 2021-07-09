@@ -1,3 +1,8 @@
+
+
+
+
+
 <aura:component implements="flexipage:availableForAllPageTypes" access="global">
 
 <!-- Setup structure of Simon Game -->
@@ -8,10 +13,10 @@
 <!-- This creates the visual styling for the color zones -->
     <div class="outer-circle">
         
-        <div class="topleft"></div>
+        <div aura:id="topleft" class="topleft"></div>
         <div aura:id="topright" class="topright"></div>
         <div aura:id="bottomleft" class="bottomleft"></div>
-        <div class="bottomright"></div>
+        <div aura:id="bottomright" class="bottomright"></div>
 
     <!-- This creates the center area of the game console -->
         <div class="inner-circle">
@@ -61,5 +66,8 @@
 
 </div>
 <!-- End of Game Console Location -->
+
+<!-- Handler -->
+<!-- <aura:handler name="init" value="{!this}" action="{!c.onInit}"/> -->
 
 </aura:component>	
