@@ -1,5 +1,8 @@
 ({
-    myAction : function(component, event, helper) {
+    toggleOn : function(component, event, helper) {
+
+
+
 
     }
 })
