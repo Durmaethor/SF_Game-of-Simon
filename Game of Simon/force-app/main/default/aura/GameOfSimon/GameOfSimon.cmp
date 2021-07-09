@@ -5,6 +5,8 @@
 
 <aura:component implements="flexipage:availableForAllPageTypes" access="global">
 
+<aura:attribute name="turn" type="String"/>
+
 <!-- Setup structure of Simon Game -->
 
 <!-- Game Console Location -->
@@ -31,7 +33,7 @@
                 <div class="slds-var-m-horizontal_small slds-form-element">
                     <label class="slds-checkbox_toggle slds-grid">
                     <span class="slds-form-element__label slds-m-bottom_none">Power</span>
-                    <input aura:id="on" change="{!c.toggleOn}" type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" />
+                    <input aura:id="on" onclick="{!c.onButton}" type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" />
                     <span id="checkbox-toggle-16" class="slds-checkbox_faux_container" aria-live="assertive">
                         <span class="slds-checkbox_faux"></span>
                     </span>
@@ -39,7 +41,7 @@
                 </div>
 
                 <!-- Start Button -->
-                <lightning:button aura:id="start" class="slds-var-m-horizontal_small" variant="Neutral" label="Start" title="Start Game" onclick="{! c.handleClick }"/>
+                <lightning:button aura:id="start" class="slds-var-m-horizontal_small" variant="Neutral" label="Start" title="Start Game" onclick="{! c.startButton }"/>
                 
                 <!-- Strict Mode toggle switch -->
                 <div class="slds-var-m-horizontal_small slds-form-element">
@@ -53,7 +55,7 @@
                 </div>
                 
                 <!-- Count Box -->
-                <div aura:id="turn" class="turn"></div>
+                <div aura:id="turn" class="turn">{!v.turn}</div>
                 <div class="text2">
                     COUNT
                 </div>
@@ -68,6 +70,6 @@
 <!-- End of Game Console Location -->
 
 <!-- Handler -->
-<!-- <aura:handler name="init" value="{!this}" action="{!c.onInit}"/> -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
 </aura:component>	
