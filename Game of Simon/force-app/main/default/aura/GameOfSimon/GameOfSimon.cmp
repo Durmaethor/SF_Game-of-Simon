@@ -1,3 +1,60 @@
-<aura:component>
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+<!-- Setup structure of Simon Game -->
+<!-- This creates the visual styling for the color zones -->
+<div aura:id="outer-circle">
+    <div aura:id="topleft"></div>
+    <div aura:id="topright"></div>
+    <div aura:id="bottomleft"></div>
+    <div aura:id="bottomright"></div>
+
+    <!-- This creates the center area of the game console -->
+    <div aura:id="inner-circle">
+      <div aura:id="title" class="font-effect-emboss">SIMON!</div>
+
+      <!-- Create the buttons and switches -->
+      <div aura:id="switches">
+
+        <!-- Power Toggle Switch -->
+        <div class="slds-form-element">
+            <label class="slds-checkbox_toggle slds-grid">
+              <span class="slds-form-element__label slds-m-bottom_none">Power</span>
+              <input type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" />
+              <span id="checkbox-toggle-16" class="slds-checkbox_faux_container" aria-live="assertive">
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-checkbox_on">On</span>
+                <span class="slds-checkbox_off">Off</span>
+              </span>
+            </label>
+          </div>
+
+          <!-- Start Button -->
+
+          <!-- Strict Mode toggle switch -->
+          <div class="slds-form-element">
+            <label class="slds-checkbox_toggle slds-grid">
+              <span class="slds-form-element__label slds-m-bottom_none">Strict</span>
+              <input type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" />
+              <span id="checkbox-toggle-16" class="slds-checkbox_faux_container" aria-live="assertive">
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-checkbox_on">On</span>
+                <span class="slds-checkbox_off">Off</span>
+              </span>
+            </label>
+          </div>
+        <!-- <input type="checkbox" class="toggle" id="on">
+            
+        <button class="button" id="start">Start</button>
+        <input type="checkbox" class="toggle" id="strict"> -->
+      </div>
+      <div class="text1">
+        <span>POWER</span><span>STRICT</span>
+      </div>
+      <div aura:id="turn"></div>
+      <div class="text2">
+        COUNT
+      </div>
+    </div>
+  </div>
 
 </aura:component>	
